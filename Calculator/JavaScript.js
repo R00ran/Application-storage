@@ -17,9 +17,11 @@ class Calculator {
     }
 
     appendNumber(number) {
+    if (this.currentOperand.length < 16) {
         if (number === "." && this.currentOperand.includes(".")) return
         this.currentOperand = this.currentOperand.toString() + number.toString()
     }
+}
 
     choseOperation(operation) {
         if (this.currentOperand === '') return
@@ -105,6 +107,24 @@ const changeOperandButton = document.querySelector('[data-change-operation]')
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
 
 // Giving buttons functionality from JavaScript
+document.addEventListener("keydown", (event) => {
+let input = event.key
+if (input > -1 && input < 10) {
+    calculator.appendNumber(Number(event.key))
+    calculator.updateDisplay()
+} else if (input == "-" || input == "+" || input == "/" || input == "*") {
+    calculator.choseOperation(event.key)
+    calculator.updateDisplay()
+} else if (input == "Enter" || input == "=") {
+    calculator.compute()
+    calculator.updateDisplay()
+} else if (input == "Backspace") {
+    calculator.delete()
+    calculator.updateDisplay()
+}
+})
+
+
 numberButtons.forEach(button => {
     button.addEventListener("click", () => {
         calculator.appendNumber(button.innerText)
