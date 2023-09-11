@@ -48,6 +48,9 @@ class Calculator {
             case '*':
                 computation = Math.round((prev * current)*100)/100
                 break;
+            case '/':
+                computation = Math.round((prev / current)*100)/100
+                break;
             case '÷':
                 computation = Math.round((prev / current)*100)/100
                 break;
@@ -101,12 +104,12 @@ const currentOperandTextElement = document.querySelector('[data-current-operand]
 const changeOperandButton = document.querySelector('[data-change-operation]')
 
 
-
-
 // Creating a calculator with defined functionality from the Calculator class
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
 
 // Giving buttons functionality from JavaScript
+
+// Making key press functional in app
 document.addEventListener("keydown", (event) => {
 let input = event.key
 if (input > -1 && input < 10) {
@@ -121,10 +124,12 @@ if (input > -1 && input < 10) {
 } else if (input == "Backspace") {
     calculator.delete()
     calculator.updateDisplay()
-}
+} 
 })
 
 
+
+// Making button clicking functional in app
 numberButtons.forEach(button => {
     button.addEventListener("click", () => {
         calculator.appendNumber(button.innerText)
@@ -158,19 +163,3 @@ changeOperandButton.addEventListener("click", () => {
     calculator.changeOperand()
     calculator.updateDisplay()
 })
-
-
-
-
-
-// const story = document.querySelector(".story")
-
-// const setText = document.body.querySelector("#one")
-// setText.addEventListener("click", (one) => {
-//     story.textContent = one + "It was a dark and stormy night..."
-// });
-
-// const clearText = document.body.querySelector('#two');
-// clearText.addEventListener("click", () => {
-//     story.textContent = "";
-// });
