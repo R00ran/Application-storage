@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather application</title>
+    <script src="app.js" defer></script>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+    </header>
+    <main>
+        <div class="main-grid">
+            <div class="current-weather">
+                <h1 class="area-name">Unknown City</h1>
+                <h2 class="current-temperature-number">- &#8451</h2>
+                <img class="main-icon" src="icons/clear-day.svg">
+                <h2 class="short-description">description</h2>
+                <div class="high-low">
+                    <h3 class="current-temperature-high">H: - &#8451</h3>
+                    <h3 class="current-temperature-low">L: - &#8451</h3>
+                </div>
+                <div class="search"><input class="search-bar" placeholder="Search">
+                    <!-- <button class="search-button"></button> -->
+                </div>
+            </div>
+
+            <div class="detailed-weather-data">
+                <div class="D-W-Container">
+                    <img class="detail-icon" src="icons - mono/thermometer-celsius.svg">
+                    <div class="detail-wrap">
+                        <h1 class="title no-wrap">feels like</h1>
+                        <h1 class="feels-like detail-text">feels like</h1>
+                    </div>
+                </div>
+                <div class="D-W-Container">
+                        <img src="icons - mono/compass.svg" class="compass detail-icon">
+                    <div class="detail-wrap">
+                        <h1 class="title no-wrap">wind direction</h1>
+                        <h1 class="wind-direction detail-text"></h1>
+                    </div>
+                    
+                </div>
+                <div class="D-W-Container">
+                    <img class="detail-icon" src="icons - mono/wind.svg">
+                    <div class="detail-wrap">
+                        <h1 class="title no-wrap">wind speed</h1>
+                        <h1 class="wind-speed detail-text">wind speed</h1>
+                    </div>
+                </div>
+                <div class="D-W-Container">
+                    <img class="detail-icon" src="icons - mono/humidity.svg">
+                    <div class="detail-wrap">
+                        <h1 class="title no-wrap">humidity</h1>
+                        <h1 class="humidity detail-text">humidity</h1>
+                    </div>
+                </div>
+                <div class="D-W-Container">
+                    <img class="detail-icon" src="icons - mono/barometer.svg">
+                    <div class="detail-wrap">
+                        <h1 class="title no-wrap">pressure</h1>
+                        <h1 class="pressure detail-text">pressure</h1>
+                    </div>
+                </div>
+                <div class="D-W-Container">
+                    <img class="detail-icon" src="icons - mono/cloudy.svg">
+                    <div class="detail-wrap">
+                        <h1 class="title no-wrap">cloud cover</h1>
+                        <h1 class="clouds detail-text">clouds</h1>
+                    </div>
+                </div>
+                <div class="D-W-Container">
+                    <img class="detail-icon" src="icons - mono/raindrop-measure.svg">
+                    <div class="detail-wrap">
+                        <h1 class="title no-wrap">precipitation</h1>
+                        <h1 class="precipitation detail-text">precipitation</h1>
+                    </div>
+                </div>
+                <div class="D-W-Container">
+                    <img class="detail-icon" src="icons - mono/dust-day.svg">
+                    <div class="detail-wrap">
+                        <h1 class="title no-wrap">visibility</h1>
+                        <h1 class="visibility detail-text">visibility</h1>
+                    </div>
+                </div>
+                <div class="D-W-Container">
+                    <img class="detail-icon" src="icons - mono/uv-index.svg">
+                    <div class="detail-wrap">
+                        <h1 class="title no-wrap">UV index</h1>
+                        <h1 class="uv-index detail-text">uv</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hourly-forecast">
+            </div>
+            <div class="daily-forecast">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <h3 class="footer-info">Beckground effect:<input type="checkbox" class="switch checkbox-round"></h3>
+        <!-- for now this is empty in the future will fill out -->
+    </footer>
+</body>
+
+</html>
