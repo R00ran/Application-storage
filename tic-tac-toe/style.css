@@ -1,0 +1,262 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* board -start */
+.board {
+    height: 40vw;
+    width: 40vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+/* board - end */
+
+/* cell - start */
+.cell {
+    border: 1px solid grey;
+}
+
+.cell:nth-child(1n + 1) {
+    border-top: none;
+}
+
+.cell:nth-child(3n + 1) {
+    border-left: none;
+}
+
+.cell:nth-child(1n + 7) {
+    border-bottom: none;
+}
+
+.cell:nth-child(3n + 3) {
+    border-right: none;
+}
+
+/* cell - end */
+
+/* signs - start */
+.o,
+.x {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* o - start */
+.o::before {
+    height: 90%;
+    width: 90%;
+    content: "";
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.o::after {
+    height: 60%;
+    width: 60%;
+    content: "";
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+}
+
+/* o - end */
+/* x - start */
+.x::after {
+    content: "";
+    height: 90%;
+    width: 20%;
+    background-color: black;
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+.x::before {
+    content: "";
+    height: 90%;
+    width: 20%;
+    background-color: black;
+    position: absolute;
+    transform: rotate(-45deg);
+}
+
+/* x - end */
+/* signs - end */
+
+/* start-screen - start */
+.start-screen {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 100;
+}
+
+/* start-screen - end */
+
+/* switch button - start */
+#selection {
+display: none;
+}
+
+.selectionLabel {
+    margin-top: 1%;
+    background-color: transparent;
+    color: black;
+    height: 10vw;
+    width: 10vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selectionLabel::before {
+    content: "";
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background-color: black;
+    position: absolute;
+}
+.selectionLabel::after {
+    content: "";
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+}
+
+
+input:checked + .selectionLabel::before {
+    content: "";
+    border-radius: 0%;
+    height: 90%;
+    width: 20%;
+    background-color: black;
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+input:checked + .selectionLabel::after {
+    content: "";
+    border-radius: 0%;
+    height: 90%;
+    width: 20%;
+    background-color: black;
+    position: absolute;
+    transform: rotate(-45deg);
+}
+/* switch button - end */
+
+/* confirm button - start */
+.confirm {
+    height: auto;
+    width: auto;
+    padding: 1%;
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+    font-size: 2rem;
+    margin-top: 1%;
+}
+/* confirm button - end */
+
+/* winning-screen - start */
+.winning-screen {
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+
+.restart,
+.renew,
+.reset-score {
+    margin-bottom: 5%;
+    height: auto;
+    width: auto;
+    padding: 0.5%;
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+    font-size: 2rem;
+    margin-top: 1%;   
+}
+
+/* winning-screen - end */
+
+/* score - start */
+.score-container {
+    width: 30%;
+    height: auto;
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.score {
+    font-size: 2rem;
+    padding-left: 2%;
+}
+
+.sign {
+    font-size: 2rem;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+
+/* score - end */
+
+.buttons-res {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.instructions,
+.message {
+    font-size: 5rem;
+}

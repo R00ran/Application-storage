@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+    <title>Tic-Tac</title>
+</head>
+
+<body>
+    <div class="score-container">
+        <div class="container">
+            <div class="sign">X:</div>
+            <div class="score sc-x"></div>
+        </div>
+        <div class="container">
+            <div class="sign">O:</div>
+            <div class="score sc-o"></div>
+        </div>
+    </div>
+    <div class="start-screen">
+        <h1 class="instructions">CHOSE YOUR SIGN</h1>
+        <input type="checkbox" class="select-sign" id="selection">
+        <label for="selection" class="selectionLabel"></label>
+        <button class="confirm">CONFIRM</button>
+    </div>
+    <div class="winning-screen">
+        <h1 class="message"></h1>
+        <div class="buttons-res">
+            <button class="restart">RESTART</button>
+            <button class="renew">SELECT NEW SIGN</button>
+            <button class="reset-score">RESET SCORE</button>
+        </div>
+    </div>
+</body>
+
+</html>
